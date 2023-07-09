@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort</title>
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/algorithms/bubble.js"></script>
+    <script defer src="scripts/algorithms/quick.js"></script>
+    <script defer src="scripts/algorithms/radix_solt(lsd).js"></script>    
+    <script defer src="scripts/algorithms/bitonic.js"></script>
+    <script defer src="scripts/algorithms/gravity.js"></script>
+    <script defer src="scripts/algorithms/timsort.js"></script>
+    <script defer src="scripts/algorithms/gnome.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sorting Visualizer</h1>
+
+        <section>
+            <div class="arr-options">
+                <button type="button" class="newArray">New Array</button>
+                <button type="button" class="reload">Reload</button>
+            </div>
+
+            <div class="sliders" id="input">
+                <span id="size">
+                    <label for = "arr_sz">Array Size</label>
+                    <input class="arr-size" id="arr_sz" type="range" min="5" max="405" step="1" value="203">
+                </span>
+                <span id="speed">
+                    <label for="speed_input">Animation Speed</label>
+                    <input class="arr-speed" id="speed_input" type="range" min="10" max="5000" stepDown=10 value=5000>
+                </span>
+                <span id="sound">
+                    <label for="sound_input">With Sound</label>
+                    <input class="arr-sound" id="sound_input" type="checkbox">
+                </span>
+            </div>
+
+            <div class="slct-sort">
+                <button type="button" class="bubbleSort">Bubble Sort
+                    <span class="tip">
+                        Average complexity: O(n<sup>2</sup>)<br>
+                        Best complexity: O(n)<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(1)<br>
+                        Stable: Yes
+                    </span>
+                </button>
+                <button type="button" class="quickSort">Quick Sort
+                    <span class="tip">
+                        Average complexity: O(n*log n)<br>
+                        Best complexity: O(n*log n )<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(n)<br>
+                        Stable: No
+                    </span>
+                </button>
+                <button type="button" class="radixSort">Radix Solt Sort
+                    <span class="tip">
+                        Average complexity: O(n*log n)<br>
+                        Best complexity: O(n*log n )<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(n)<br>
+                        Stable: No
+                    </span>
+                </button>
+                <button type="button" class="bitonicSort">Bitonic Sort
+                    <span class="tip">
+                        Average complexity: O(n*log n)<br>
+                        Best complexity: O(n*log n )<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(n)<br>
+                        Stable: No
+                    </span>
+                </button>
+                <button type="button" class="beadSort">Gravity Sort
+                    <span class="tip">
+                        Average complexity: O(n*log n)<br>
+                        Best complexity: O(n*log n )<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(n)<br>
+                        Stable: No
+                    </span>
+                </button>
+                <button type="button" class="timSort">Tim Sort
+                    <span class="tip">
+                        Average complexity: O(n*log n)<br>
+                        Best complexity: O(n*log n )<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(n)<br>
+                        Stable: No
+                    </span>
+                </button>
+                <button type="button" class="gnomeSort">Gnome Sort
+                    <span class="tip">
+                        Average complexity: O(n*log n)<br>
+                        Best complexity: O(n*log n )<br>
+                        Worst complexity: O(n<sup>2</sup>)<br>
+                        Space complexity: O(n)<br>
+                        Stable: No
+                    </span>
+                </button>
+            </div>
+        </section>
+    </header>
+
+    <div id="bars" class="flex-container"></div>
+</body>
+<footer>
+    <section>
+        <h1>It's mine site</h1>
+    </section>
+</footer>
+</html>
