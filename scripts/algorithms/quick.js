@@ -1,45 +1,45 @@
-async function partition(ele, l, r){
+async function partition(arr, l, r){
     let i = l - 1;
     for (let j = l; j <= r-1; j++){
         try{
-        ele[i].style.background = '#dd3939';
-        ele[j].style.background = '#dd3939';
+        arr[i].style.background = '#dd3939';
+        arr[j].style.background = '#dd3939';
         }
         catch{}
-        if (parseInt(ele[j].style.height) <= parseInt(ele[r].style.height)){
+        if (parseInt(arr[j].style.height) <= parseInt(arr[r].style.height)){
             i++;
             if(checkSound())
             {
-                playNote(parseInt(ele[i].style.height)*10);
-                playNote(parseInt(ele[j].style.height)*10);
+                playNote(parseInt(arr[i].style.height)*10);
+                playNote(parseInt(arr[j].style.height)*10);
             }
             await waitforme(delay);
-            swap(ele[i], ele[j]);
-            ele[i].style.background = '#519259';
-            ele[j].style.background = '#519259';
+            swap(arr[i], arr[j]);
+            arr[i].style.background = '#519259';
+            arr[j].style.background = '#519259';
         }
     }
     i++;
-    ele[i].style.background = '#dd3939';
-    ele[r].style.background = '#dd3939';
+    arr[i].style.background = '#dd3939';
+    arr[r].style.background = '#dd3939';
     if(checkSound())
     {
-        playNote(parseInt(ele[i].style.height)*10);
-        playNote(parseInt(ele[r].style.height)*10);
+        playNote(parseInt(arr[i].style.height)*10);
+        playNote(parseInt(arr[r].style.height)*10);
     }
     await waitforme(delay);
-    swap(ele[i],ele[r]);
-    ele[i].style.background = '#519259';
-    ele[r].style.background = '#519259';
+    swap(arr[i],arr[r]);
+    arr[i].style.background = '#519259';
+    arr[r].style.background = '#519259';
     return i;
 }
 
-async function quickSort(ele, l, r){
+async function quickSort(arr, l, r){
   if (l < r){
-    let pi = await partition(ele, l, r);
-    if(pi === ele.length) return;
-    await quickSort(ele, l, pi - 1);
-    await quickSort(ele, pi + 1, r);
+    let pi = await partition(arr, l, r);
+    if(pi === arr.length) return;
+    await quickSort(arr, l, pi - 1);
+    await quickSort(arr, pi + 1, r);
   }
 }
 
@@ -53,12 +53,12 @@ quickSortbtn.addEventListener('click', async function(){
     document.querySelector(".quickSort").style.color = 'white';
     document.querySelector(".quickSort").style.background = '#58afcc';
     document.querySelector(".quickSort").style.border = '1.5px #58afcc solid';
-    const ele = document.querySelectorAll('.bar');
+    const arr = document.querySelectorAll('.bar');
     let l = 0;
-    let r = ele.length - 1;
-    await quickSort(ele, l, r);
-    for(let i = 0; i < ele.length;i++)
-        ele[i].style.background = '#519259';
+    let r = arr.length - 1;
+    await quickSort(arr, l, r);
+    for(let i = 0; i < arr.length;i++)
+        arr[i].style.background = '#519259';
     document.querySelector(".quickSort").style.color = '';
     document.querySelector(".quickSort").style.background = '';
     document.querySelector(".quickSort").style.border = '';
